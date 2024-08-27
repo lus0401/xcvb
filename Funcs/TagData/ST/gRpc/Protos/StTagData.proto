@@ -1,0 +1,23 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.TAG.ST";
+package IX.DS.DA.TAGDATA.ST;
+
+import "Funcs/Common/ProtoModels.proto";
+import "Funcs/TagData/Common/ProtoModels.proto";
+
+// 태그기준정보처리
+service StTagDataSvc {
+  rpc InsertStAssetTagData (StAssetTagDataVO) returns (Result);
+  rpc Test (EmptyData) returns (EmptyData);
+  /*rpc UpdateStAssetTagData (StAssetTagDataVO) returns (Result);
+  rpc InsertStAssetTagDataArray (StAssetTagDataVO) returns (Results) ;
+  rpc UpdateStAssetTagDataArray (StAssetTagDataVO) returns (Results);
+  rpc InsertStTagData (StTagDataVO) returns (Result);
+  rpc UpdateStTagData (StTagDataVO) returns (Result);
+  rpc InsertStTagDataArray (StTagDataVO) returns (Results) ;
+  rpc UpdateStTagDataArray (StTagDataVO) returns (Results);
+  rpc GetStTagData (StTagSelectVO) returns (StTagDataVO);*/
+}
+
+
+

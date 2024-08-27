@@ -1,0 +1,61 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.ASSETDATA.COMMON";
+package IX.DS.DA.ASSETDATA;
+
+// The greeting service definition.
+
+
+enum CONNECTION_TYPE
+{
+	TCP=0;
+	SERIAL=1;
+}
+
+enum PROTOCOL_TYPE
+{
+	OPC_UA=0;
+	MODBUS=1;
+}
+
+// The request message containing the user's name.
+message ConnectionMasterVO {
+  uint32 asset_code = 1;
+  optional CONNECTION_TYPE Connection_Type = 2;
+  optional PROTOCOL_TYPE protocol_type = 3;
+}
+
+message ConnectionMasterVOs {
+  repeated ConnectionMasterVO ConnectionMasterVO=1;
+}
+
+// The request message containing the user's name.
+message ConnectionDataVO {
+  uint32 asset_code = 1;
+  optional string ConnectionData = 2;
+}
+
+message ConnectionDataVOs {
+  repeated ConnectionDataVO ConnectionDataVO=1;
+}
+
+message ProtocolDataVO {
+  uint32 asset_code = 1;
+  optional string ProtocolData = 2;
+}
+
+message ProtocolDataVOs {
+  repeated ProtocolDataVO ProtocolDataVO=1;
+}
+
+// 전체 커낵션데이터
+message AssetConnectionDataVO {
+  uint32 asset_code = 1;
+  optional ConnectionMasterVO ConnectionMasterVO = 2;
+  optional string ConnectionData = 3;
+  optional string ProtocolData = 4;
+}
+
+// 전체 커낵션데이터
+message AssetConnectionDataVOs {
+ repeated AssetConnectionDataVO AssetConnectionDataVO=1;
+}

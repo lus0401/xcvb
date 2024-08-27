@@ -1,0 +1,35 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.TAG";
+package IX.DS.DA.TAGDATA;
+
+message StTagDataVO{
+	uint32 asset_code = 1;
+	uint64 tag_st_code = 2;
+	optional string StandardData=3;
+}
+
+message StAssetTagDataVO{
+	uint32 asset_code = 1;
+	repeated StTagDataVO StTagData=2;
+}
+message StAssetTagDataVOs{
+	repeated StAssetTagDataVO StAssetTagData=1;
+}
+
+message StTagSelectVO
+{
+	uint32 asset_code=1;
+	uint64 tag_st_code=2;
+}
+
+
+message RTTagDataVO{
+	string timestamp = 1;
+	uint32 asset_code = 2;
+    uint64 tag_st_code = 3;
+    string value = 4;
+}
+
+message RTTagDataVOs{
+	repeated RTTagDataVO RTTagDataVO=1;
+}

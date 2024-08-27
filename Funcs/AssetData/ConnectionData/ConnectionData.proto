@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "IX.MW.DA.CLIENT.ASSETDATA.CONNECTIONDATA";
+
+package IX.DS.DA.ASSETDATA.CONNECTIONDATA;
+import "Funcs/AssetData/Common/ProtoModels.proto";
+import "Funcs/Common/ProtoModels.proto";
+
+// The greeting service definition.
+service ConnectionDataSvc {
+  // Sends a greeting
+  rpc InsertConnData (ConnectionDataVO) returns (Result);
+  rpc UpdateConnData (ConnectionDataVO) returns (Result);
+  rpc InsertConnDataArray (ConnectionDataVOs) returns (Results) ;
+  rpc UpdateConnDataArray (ConnectionDataVOs) returns (Results);
+  rpc GetConnectionData (Asset_Code) returns (ConnectionDataVO);
+}
+
+
+
+
+

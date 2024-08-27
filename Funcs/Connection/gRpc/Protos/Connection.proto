@@ -1,0 +1,16 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.CONNECTION";
+package IX.DS.DA.CONNECTION;
+import "Funcs/Common/ProtoModels.proto";
+
+
+
+// The greeting service definition.
+service ConnectionSvc {
+  // Sends a greeting
+  rpc ConnAssetAsync (Asset_Code) returns (Result) ;
+  rpc ConnAssetArrayAsync (Asset_Codes) returns (Results) ;
+}
+
+/*
+*/

@@ -1,0 +1,28 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.CONNECTION.RECEIVE";
+package IX.DS.DA.CONNECTION.RECEIVE;
+import "Funcs/Common/ProtoModels.proto";
+
+
+
+// The greeting service definition.
+service ConnectionRcvSvc {
+  //Sends a greeting
+  rpc AssetConnStatus_Changed (CONNECTION_STATUS) returns (Result);
+  //rpc InsertTagValueDataArray (RTTagDataVOs) returns (Results);
+ 
+}
+
+enum CONNECTION_STATUS_ENUM
+{
+	OPEN = 0;
+	CLOSE = 1;
+	WAIT = 2;
+	ERROR = 3;
+}
+
+message CONNECTION_STATUS
+{
+	uint32 asset_code = 1;
+	optional CONNECTION_STATUS_ENUM CONNECTION_STATUS=2;
+}

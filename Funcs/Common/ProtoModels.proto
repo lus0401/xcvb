@@ -1,0 +1,38 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.COMMON";
+package IX.DS.DA;
+// The greeting service definition.
+
+message Asset_Code{
+	uint32 asset_code = 1;
+}
+message Asset_Codes{
+	repeated Asset_Code Asset_Code=1;
+}
+
+message Tag_St_Code{
+	uint64 tag_st_code = 1;
+}
+message Tag_St_Codes{
+	repeated Tag_St_Code Tag_St_Code=1;
+}
+message Tag_Value_VO{
+	uint64 tag_st_code = 1;
+}
+message Tag_Value_VOs{
+	repeated Tag_Value_VO Tag_Value_VO=1;
+}
+
+// The response message containing the greetings.
+message Result {
+  bool isSucc = 1;
+  string msg = 2;
+  uint32 asset_code =3;
+}
+
+message Results {
+  repeated Result Results=1;
+}
+
+message EmptyData {
+}

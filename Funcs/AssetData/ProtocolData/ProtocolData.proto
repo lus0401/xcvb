@@ -1,0 +1,16 @@
+syntax = "proto3";
+option csharp_namespace = "IX.MW.DA.CLIENT.ASSETDATA.PROTOCOLDATA";
+package IX.DS.DA.ASSETDATA.PROTOCOL.DATA;
+import "Funcs/AssetData/Common/ProtoModels.proto";
+import "Funcs/Common/ProtoModels.proto";
+
+// The greeting service definition.
+service ProtocolDataSvc {
+  // Sends a greeting
+  rpc InsertProtocolData (ProtocolDataVO) returns (Result);
+  rpc UpdateProtocolData (ProtocolDataVO) returns (Result);
+  rpc InsertProtocolDataArray (ProtocolDataVOs) returns (Results) ;
+  rpc UpdateProtocolDataArray (ProtocolDataVOs) returns (Results);
+  rpc GetProtocolData (Asset_Code) returns (ProtocolDataVO);
+}
+

@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option csharp_namespace = "IX.MW.DA.CLIENT.TAG.VALUE";
+
+package IX.DS.DA.TAGDATA.VALUES;
+import "Funcs/Common/ProtoModels.proto";
+import "Funcs/TagData/Common/ProtoModels.proto";;
+
+// The greeting service definition.
+service TagValueDataSvc {
+  //Sends a greeting
+  rpc InsertTagValueData (RTTagDataVO) returns (Result);
+  rpc InsertTagValueDataArray (RTTagDataVOs) returns (Results);
+  // ReadRealTimeData
+  rpc GetTagValueData (Tag_St_Code) returns (RTTagDataVO);
+  rpc GetTagValueDataArray (Asset_Code) returns (RTTagDataVOs);
+}
+
